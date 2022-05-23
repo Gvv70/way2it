@@ -13,8 +13,7 @@ public class Animal {
     public void setNameAnimal() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input name animal: ");
-        nameAnimal = scanner.next();
-        this.nameAnimal = nameAnimal;
+        this.nameAnimal = scanner.next();
     }
 
     public int getSpeedAnimal() {
@@ -24,8 +23,7 @@ public class Animal {
     public void setSpeedAnimal() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input speed animal: ");
-        speedAnimal = scanner.nextInt();
-        this.speedAnimal = speedAnimal;
+        this.speedAnimal = scanner.nextInt();
     }
 
     public int getAgeAnimal() {
@@ -35,8 +33,7 @@ public class Animal {
     public void setAgeAnimal() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input age animal: ");
-        ageAnimal = scanner.nextInt();
-        this.ageAnimal = ageAnimal;
+        this.ageAnimal = scanner.nextInt();
     }
 }
 
