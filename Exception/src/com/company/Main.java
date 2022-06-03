@@ -9,9 +9,8 @@ public class Main {
         Human human = new Human();
         human.setName("Mickael");
         human.setAge(19);
-        human.setMail("gdvag@sbh.fr");
-        UnderAgeException uae = new UnderAgeException();
-        IncorrectEmailException iee = new IncorrectEmailException();
+        human.setMail("gdvagsbh.fr");
+
         CheckMail cm = new CheckMail();
 
         try {
@@ -25,14 +24,14 @@ public class Main {
             throw new UnderAgeException();
         }
         catch (UnderAgeException underAgeException){
-            uae.underAgeException(human.getAge());
+            UnderAgeException.underAgeException(human.getAge());
         }
 
         try {
             throw new IncorrectEmailException();
         }
         catch (IncorrectEmailException incorrectEmailException){
-            iee.incorrectEmailException(human.getMail());
+            IncorrectEmailException.incorrectEmailException(human.getMail());
         }
     }
 }
