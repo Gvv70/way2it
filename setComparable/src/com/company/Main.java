@@ -1,75 +1,54 @@
 package com.company;
 
-//import java.util.ArrayList;
-import java.util.HashSet;
-//import java.util.List;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        NameCode name = new NameCode();
-        NameCode code = new NameCode();
+        hashSetExample();
+        linkedSetExample();
+        treeSetExample();
+    }
 
-        Set<String> setName = new HashSet<>();
-        Set<Integer> setCode = new HashSet<>();
-        Set<String> linkedSetName = new LinkedHashSet<>();
-        Set<Integer> linkedSetCode = new LinkedHashSet<>();
-        Set<String> treeSetName = new TreeSet<>();
-        Set<Integer> treeSetCode = new TreeSet<>();
-
-        name.setName("Michael");
-        code.setCode(1);
-        setName.add(name.getName());
-        setCode.add(code.getCode());
-        linkedSetName.add(name.getName());
-        linkedSetCode.add(code.getCode());
-        treeSetName.add(name.getName());
-        treeSetCode.add(code.getCode());
-        name.setName("Ben");
-        code.setCode(15);
-        setName.add(name.getName());
-        setCode.add(code.getCode());
-        linkedSetName.add(name.getName());
-        linkedSetCode.add(code.getCode());
-        treeSetName.add(name.getName());
-        treeSetCode.add(code.getCode());
-        name.setName("Alexandr");
-        code.setCode(2);
-        setName.add(name.getName());
-        setCode.add(code.getCode());
-        linkedSetName.add(name.getName());
-        linkedSetCode.add(code.getCode());
-        treeSetName.add(name.getName());
-        treeSetCode.add(code.getCode());
-
+    public static void hashSetExample() {
+        Set<SetNameCode> setNameCodes = new HashSet<>();
+        setNameCodes.add(new SetNameCode("Michael", 34));
+        setNameCodes.add(new SetNameCode("Ben", 25));
+        setNameCodes.add(new SetNameCode("Alexandr", 96));
+        setNameCodes.add(new SetNameCode("Maria", 14));
+        setNameCodes.add(new SetNameCode("Natalya", 88));
         System.out.println("Set printed:");
-        for (String a : setName){
-            System.out.println("Name - " + a);
-        }
-        for (Integer b : setCode){
-            System.out.println("Code - " + b);
+        for (SetNameCode a : setNameCodes){
+            System.out.println(a.toString());
         }
         System.out.println();
+    }
 
+    public static void linkedSetExample() {
+        Set<SetNameCode> setNameCodes = new LinkedHashSet<>();
+        setNameCodes.add(new SetNameCode("Michael", 34));
+        setNameCodes.add(new SetNameCode("Ben", 25));
+        setNameCodes.add(new SetNameCode("Alexandr", 96));
+        setNameCodes.add(new SetNameCode("Maria", 14));
+        setNameCodes.add(new SetNameCode("Natalya", 88));
         System.out.println("LinkedSet printed:");
-        for (String a : linkedSetName){
-            System.out.println("Name - " + a);
-        }
-        for (Integer b : linkedSetCode){
-            System.out.println("Code - " + b);
+        for (SetNameCode a : setNameCodes){
+            System.out.println(a.toString());
         }
         System.out.println();
+    }
 
+    public static void treeSetExample() {
+        Set<SetNameCode> setNameCodes = new TreeSet<>(Comparator.comparingInt(SetNameCode::getCode));
+        setNameCodes.add(new SetNameCode("Michael", 34));
+        setNameCodes.add(new SetNameCode("Ben", 25));
+        setNameCodes.add(new SetNameCode("Alexandr", 96));
+        setNameCodes.add(new SetNameCode("Maria", 14));
+        setNameCodes.add(new SetNameCode("Natalya", 88));
         System.out.println("TreeSet printed:");
-        for (String a : treeSetName){
-            System.out.println("Name - " + a);
+        for (SetNameCode a : setNameCodes){
+            System.out.println(a.toString());
         }
-        for (Integer b : treeSetCode){
-            System.out.println("Code - " + b);
-        }
-
+        System.out.println();
     }
 }
